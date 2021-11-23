@@ -1,0 +1,28 @@
+version: "3"
+services:
+  pg12:
+    container_name: pg12
+    image: timescale/timescaledb:2.5.0-pg12
+    environment:
+      POSTGRES_DB: gapfill
+      POSTGRES_PASSWORD: mellon
+    volumes:
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  pg13:
+    container_name: pg13
+    image: timescale/timescaledb:2.5.0-pg13
+    environment:
+      POSTGRES_DB: gapfill
+      POSTGRES_PASSWORD: mellon
+    volumes:
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  pg14:
+    container_name: pg14
+    image: timescale/timescaledb:2.5.0-pg14
+    environment:
+      POSTGRES_DB: gapfill
+      POSTGRES_PASSWORD: mellon
+    volumes:
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
